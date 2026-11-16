@@ -1,0 +1,301 @@
+:root {
+    --bordeaux: #6B2C39;
+    --gold: #C9A96E;
+    --cream: #FDF8F0;
+    --text: #2C2C2C;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* ---------- Fotos laterales fijas ---------- */
+.side-gallery {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: 20px 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.side-gallery.left  { left: 0; }
+.side-gallery.right { right: 0; }
+
+.side-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 4px;
+    filter: sepia(15%) contrast(95%);
+    opacity: 0.85;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+/* ---------- Contenedor principal ---------- */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    padding: 60px 20px 40px;
+    border-bottom: 1px solid var(--gold);
+    position: relative;
+}
+.hero h1 {
+    font-size: 3rem;
+    color: var(--bordeaux);
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.hero .ampersand {
+    display: block;
+    font-size: 2rem;
+    color: var(--gold);
+    margin: 10px 0;
+}
+.hero .date {
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+
+/* ---------- Secciones ---------- */
+.section {
+    padding: 50px 0;
+    border-bottom: 1px solid #e8ddd0;
+}
+.section:last-of-type { border-bottom: none; }
+.section h2 {
+    font-size: 1.5rem;
+    color: var(--bordeaux);
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* ---------- Cuenta regresiva ---------- */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+.countdown-item { text-align: center; }
+.countdown-item .number {
+    font-size: 2.5rem;
+    color: var(--bordeaux);
+    display: block;
+    line-height: 1.2;
+}
+.countdown-item .label {
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ---------- Tarjetas de evento ---------- */
+.event-card {
+    background: white;
+    padding: 30px;
+    margin: 20px 0;
+    border: 1px solid #e8ddd0;
+    position: relative;
+}
+.event-card h3 {
+    color: var(--bordeaux);
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.event-card .time {
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+.event-card .venue {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 5px;
+    line-height: 1.7;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--bordeaux);
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+.btn:hover { background-color: #8B3A4A; }
+
+/* Botón de Google Maps: estilo outline */
+.btn-maps {
+    background-color: transparent;
+    color: var(--bordeaux);
+    border: 1px solid var(--bordeaux);
+    margin-top: 22px;
+}
+.btn-maps:hover {
+    background-color: var(--bordeaux);
+    color: white;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+/* ---------- Decoraciones minimalistas ---------- */
+
+/* Corazones */
+.deco-heart {
+    width: 22px;
+    height: 22px;
+    fill: var(--gold);
+    opacity: 0.55;
+    position: absolute;
+}
+.deco-heart.top-left  { top: 30px; left: 30px; transform: rotate(-15deg); }
+.deco-heart.top-right { top: 30px; right: 30px; transform: rotate(15deg); }
+.deco-heart.under-date {
+    position: static;
+    display: block;
+    margin: 14px auto 0;
+    width: 18px;
+    height: 18px;
+    fill: var(--bordeaux);
+    opacity: 0.5;
+}
+
+/* Separador con corazón */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 40px auto 10px;
+    max-width: 300px;
+}
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+}
+.divider svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--bordeaux);
+    opacity: 0.7;
+}
+
+/* Flores en esquinas de tarjetas */
+.corner-flower {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    fill: var(--gold);
+    opacity: 0.6;
+}
+.corner-flower.tl { top: 10px; left: 10px; }
+.corner-flower.tr { top: 10px; right: 10px; transform: scaleX(-1); }
+.corner-flower.bl { bottom: 10px; left: 10px; transform: rotate(180deg); }
+.corner-flower.br { bottom: 10px; right: 10px; transform: scaleX(-1) rotate(180deg); }
+
+/* Osito grande (mesa de regalos) */
+.bear {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 25px auto 0;
+    fill: var(--bordeaux);
+    opacity: 0.75;
+}
+.bear-heart {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 8px auto 0;
+    fill: var(--gold);
+    opacity: 0.6;
+}
+
+/* Ositos pequeños en el hero */
+.deco-bear {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    fill: var(--gold);
+    opacity: 0.45;
+}
+.hero-bear-left  { top: 70px; left: 20px; transform: rotate(-8deg); }
+.hero-bear-right { top: 70px; right: 20px; transform: rotate(8deg); }
+
+/* Osito y corazón en el footer */
+.footer-bear {
+    width: 42px;
+    height: 42px;
+    fill: var(--gold);
+    opacity: 0.5;
+    display: block;
+    margin: 0 auto 8px;
+}
+.footer-heart {
+    width: 16px;
+    height: 16px;
+    fill: var(--bordeaux);
+    opacity: 0.5;
+    display: block;
+    margin: 6px auto 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+    .side-gallery { width: 160px; }
+    .side-gallery img { height: 140px; }
+}
+
+@media (max-width: 900px) {
+    .side-gallery { display: none; }
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.2rem; }
+    .countdown { gap: 20px; }
+    .countdown-item .number { font-size: 1.8rem; }
+    .deco-bear { width: 28px; height: 28px; }
+    .hero-bear-left  { top: 50px; left: 10px; }
+    .hero-bear-right { top: 50px; right: 10px; }
+}
